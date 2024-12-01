@@ -12,13 +12,24 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('paperbackground.png') no-repeat center center fixed;
+            background-image: url('./paperbackground.png');
+            background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
         }
         .video-container {
             position: relative;
-            width: 800px; /* Adjust as needed */
-            height: 450px; /* Adjust as needed */
+            width: 600px; /* Adjust to match the frame */
+            height: 400px; /* Adjust to match the frame */
+        }
+        iframe {
+            position: absolute;
+            top: 7%; /* Adjust based on the frame padding */
+            left: 7%; /* Adjust based on the frame padding */
+            width: 86%; /* Adjust based on frame dimensions */
+            height: 86%; /* Adjust based on frame dimensions */
+            border: none;
+            z-index: 2; /* Ensure it appears above the background */
         }
         .video-frame {
             position: absolute;
@@ -26,29 +37,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('frame.png') no-repeat center center;
+            background-image: url('./frame.png');
+            background-repeat: no-repeat;
             background-size: cover;
-            mix-blend-mode: darken;
+            z-index: 3; /* Ensure it overlays the video */
             pointer-events: none;
-        }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
         }
         .play-button {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
+            width: 100px; /* Adjust size */
+            height: 100px; /* Adjust size */
             transform: translate(-50%, -50%);
-            background: url('playbutton.png') no-repeat center center;
+            background-image: url('./playbutton.png');
+            background-repeat: no-repeat;
             background-size: contain;
-            mix-blend-mode: darken;
+            z-index: 4; /* Ensure it appears on top */
             pointer-events: none;
         }
     </style>
